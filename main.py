@@ -6,10 +6,16 @@ import torchaudio
 import librosa
 import soundfile as sf
 import numpy as np
+import sys
 import os
+sys.path.append(".")
+from google.colab import files
+uploaded = files.upload()
 
 from model import SpeakerEncoder, SimpleTTS, SimpleVocoder
 from utils import text_to_sequence, load_wav
+
+
 
 def main():
     # === STEP 1: Load audio and extract voice embedding ===
