@@ -1,0 +1,7 @@
+# voice_cloning_app/requirements.txt
+
+torch
+librosa
+numpy
+torchaudio
+soundfile
