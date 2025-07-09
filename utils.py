@@ -1,11 +1,8 @@
-# voice_cloning_app/utils.py
-
-import librosa
-import numpy as np
+import soundfile as sf
 import re
 
 def load_wav(path):
-    wav, sr = librosa.load(path, sr=22050)
+    wav, sr = sf.read(path)
     return wav, sr
 
 def text_to_sequence(text):
