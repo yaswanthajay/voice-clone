@@ -1,0 +1,19 @@
+import numpy as np
+import soundfile as sf
+
+# Parameters
+sr = 22050  # Sample rate
+duration = 2  # seconds
+samples = int(sr * duration)
+
+# Generate a short sine wave tone instead of silence
+t = np.linspace(0, duration, samples, False)
+freq = 440  # A4 note frequency (440 Hz)
+tone = 0.3 * np.sin(2 * np.pi * freq * t)
+
+# Ensure correct data format: float32
+tone = tone.astype(np.float32)
+
+# Save the tone to sample_audio.wav
+sf.write("sample_audio.wav", tone, sr)
+print("✅ sample_audio.wav created with test tone.")
